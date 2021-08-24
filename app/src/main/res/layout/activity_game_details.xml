@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--    Expandable TextView Licence-->
+<!--    Copyright 2014 Manabu Shimobe-->
+
+<!--    Licensed under the Apache License, Version 2.0 (the "License");-->
+<!--    you may not use this file except in compliance with the License.-->
+<!--    You may obtain a copy of the License at-->
+
+<!--    http://www.apache.org/licenses/LICENSE-2.0-->
+
+<!--    Unless required by applicable law or agreed to in writing, software-->
+<!--    distributed under the License is distributed on an "AS IS" BASIS,-->
+<!--    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.-->
+<!--    See the License for the specific language governing permissions and-->
+<!--    limitations under the License.-->
+
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_constraintTop_toBottomOf="parent"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    android:background="@drawable/background_image">
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:context=".GameDetails"
+    android:paddingBottom="10sp">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5sp"
+        android:background="@drawable/image_effects"
+        android:padding="10sp">
+
+        <ImageView
+            android:id="@+id/gameBoxArt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:contentDescription="Game Box Art"
+            android:src="@mipmap/ic_launcher" />
+
+    </androidx.cardview.widget.CardView>
+
+    <TextView
+        android:id="@+id/gameTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:text="TITLE"
+        android:textAlignment="center"
+        android:textColor="@color/colorText"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/cardView"
+        android:textStyle="bold"
+        android:textSize="25sp"/>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/backgroundTint"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/game_details_background"
+        android:layout_margin="10sp"
+        android:padding="5sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/gameTitle">
+
+        <TextView
+            android:id="@+id/previouslyRated"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:textColor="@color/colorText"
+            android:textSize="15sp"
+            android:textStyle="italic"
+            android:visibility="gone"
+            android:padding="5dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.ms.square.android.expandabletextview.ExpandableTextView
+            android:id="@+id/expand_text_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:animDuration="300"
+            app:layout_constraintTop_toBottomOf="@id/previouslyRated"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:maxCollapsedLines="2"
+            android:paddingLeft="5dp">
+
+            <!--  Expandable TextView for Game Description-->
+            <TextView
+                android:id="@+id/expandable_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:textColor="@color/colorText"
+                android:textSize="15sp" />
+
+            <ImageButton
+                android:id="@+id/expand_collapse"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end|bottom"
+                android:backgroundTint="#00FFFFFF"
+                android:tint="@color/colorSecondary" />
+
+        </com.ms.square.android.expandabletextview.ExpandableTextView>
+
+        <TextView
+            android:id="@+id/gameGenre"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5sp"
+            android:padding="5dp"
+            android:text="Genres: "
+            android:textColor="@color/colorText"
+            android:textSize="15sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/expand_text_view" />
+
+        <TextView
+            android:id="@+id/gameDeveloper"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:padding="5dp"
+            android:text="Developer: "
+            android:textColor="@color/colorText"
+            android:textSize="15sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/gameGenre" />
+
+        <TextView
+            android:id="@+id/gameReleaseDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:padding="5dp"
+            android:text="Release Date: "
+            android:textColor="@color/colorText"
+            android:textSize="15sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/gameDeveloper" />
+
+        <Button
+            android:id="@+id/avgRatingBtn"
+            android:layout_marginTop="10sp"
+            android:layout_width="50sp"
+            android:layout_height="50sp"
+            app:layout_constraintTop_toBottomOf="@id/gameReleaseDate"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:textColor="@color/colorTextSecondary"
+            android:textStyle="bold"
+            android:background="@drawable/trophy_icon"
+            android:paddingBottom="20sp"/>
+
+        <TextView
+            android:id="@+id/numRatings"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:textColor="@color/colorText"
+            android:textSize="12sp"
+            android:textStyle="italic"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/avgRatingBtn" />
+
+        <RatingBar
+            android:id="@+id/gameRating"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:numStars="5"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/numRatings"
+            android:progressTint="@color/colorSecondary"/>
+
+        <Button
+            android:id="@+id/submitRating"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
+            android:text="Submit Rating"
+            android:padding="5dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/gameRating"
+            android:background="@drawable/rounded_edges"
+            android:textColor="@color/colorTextSecondary"
+            android:textStyle="bold"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
+
+

@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background_image"
+    tools:context=".HomePage">
+
+    <TextView
+        android:id="@+id/welcomeMsg"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50sp"
+        android:text="Welcome username\nPlease choose an option below"
+        android:textAlignment="center"
+        android:textColor="@color/colorText"
+        android:textSize="15sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="0sp"
+        android:background="@drawable/game_details_background"
+        app:layout_constraintTop_toBottomOf="@id/welcomeMsg"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_margin="5sp"
+        android:padding="2sp">
+
+    <Button
+        android:id="@+id/browseButton"
+        style="@style/TextAppearance.AppCompat.Button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/home_button_background"
+        android:padding="20sp"
+        android:text="Browse All"
+        android:textColor="@color/colorTextSecondary"
+        app:layout_constraintBottom_toTopOf="@+id/actionButton"
+        app:layout_constraintEnd_toStartOf="@+id/myRecommendationsButton"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/myRecommendationsButton"
+        style="@style/TextAppearance.AppCompat.Button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/home_button_background"
+        android:padding="20sp"
+        android:text="Recommended"
+        android:textColor="@color/colorTextSecondary"
+        app:layout_constraintBottom_toTopOf="@+id/adventureButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/browseButton"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/actionButton"
+        style="@style/TextAppearance.AppCompat.Button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/home_button_background"
+        android:padding="20sp"
+        android:text="Action Games"
+        android:textColor="@color/colorTextSecondary"
+        app:layout_constraintBottom_toTopOf="@+id/indieButton"
+        app:layout_constraintEnd_toStartOf="@+id/adventureButton"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/browseButton" />
+
+    <Button
+        android:id="@+id/adventureButton"
+        style="@style/TextAppearance.AppCompat.Button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/home_button_background"
+        android:padding="20sp"
+        android:text="Adventure Games"
+        android:textColor="@color/colorTextSecondary"
+        app:layout_constraintBottom_toTopOf="@+id/strategyButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/actionButton"
+        app:layout_constraintTop_toBottomOf="@+id/myRecommendationsButton" />
+
+    <Button
+        android:id="@+id/indieButton"
+        style="@style/TextAppearance.AppCompat.Button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/home_button_background"
+        android:padding="20sp"
+        android:text="Indie Games"
+        android:textColor="@color/colorTextSecondary"
+        app:layout_constraintBottom_toTopOf="@+id/simulationButton"
+        app:layout_constraintEnd_toStartOf="@+id/strategyButton"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/actionButton" />
+
+    <Button
+        android:id="@+id/strategyButton"
+        style="@style/TextAppearance.AppCompat.Button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/home_button_background"
+        android:padding="20sp"
+        android:text="Strategy Games"
+        android:textColor="@color/colorTextSecondary"
+        app:layout_constraintBottom_toTopOf="@+id/rpgButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/indieButton"
+        app:layout_constraintTop_toBottomOf="@+id/adventureButton" />
+
+    <Button
+        android:id="@+id/simulationButton"
+        style="@style/TextAppearance.AppCompat.Button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/home_button_background"
+        android:padding="20sp"
+        android:text="Simulation Games"
+        android:textColor="@color/colorTextSecondary"
+        app:layout_constraintBottom_toTopOf="@+id/casualButton"
+        app:layout_constraintEnd_toStartOf="@+id/rpgButton"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/indieButton" />
+
+    <Button
+        android:id="@+id/rpgButton"
+        style="@style/TextAppearance.AppCompat.Button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/home_button_background"
+        android:padding="20sp"
+        android:text="Role Playing Games"
+        android:textColor="@color/colorTextSecondary"
+        app:layout_constraintBottom_toTopOf="@+id/racingButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/simulationButton"
+        app:layout_constraintTop_toBottomOf="@+id/strategyButton" />
+
+    <Button
+        android:id="@+id/casualButton"
+        style="@style/TextAppearance.AppCompat.Button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/home_button_background"
+        android:padding="20sp"
+        android:text="Casual Games"
+        android:textColor="@color/colorTextSecondary"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/racingButton"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/simulationButton" />
+
+    <Button
+        android:id="@+id/racingButton"
+        style="@style/TextAppearance.AppCompat.Button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/home_button_background"
+        android:padding="20sp"
+        android:text="Racing Games"
+        android:textColor="@color/colorTextSecondary"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/casualButton"
+        app:layout_constraintTop_toBottomOf="@+id/rpgButton" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background_image"
+    tools:context=".GamesBrowser">
+
+    <TextView
+        android:id="@+id/recommendedGamesTxt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Users similar to you liked the following games..."
+        android:textAlignment="center"
+        android:textColor="@color/colorText"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.02"
+        android:background="@drawable/game_details_background"
+        android:visibility="gone"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/gamesRecyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/recommendedGamesTxt"
+        android:layout_marginTop="10dp"
+         />
+
+    <ProgressBar
+        android:id="@+id/recommendProgressBar"
+        style="?android:attr/progressBarStyleLarge"
+        android:indeterminateTint="@color/colorSecondary"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/gamesRecyclerView"
+        app:layout_constraintTop_toBottomOf="@+id/recommendedGamesTxt"
+        android:visibility="gone"/>
+
+    <TextView
+        android:id="@+id/recommendProgressTxt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintVertical_bias="0.1"
+        android:text="Loading recommendations..."
+        android:textAlignment="center"
+        android:textColor="@color/colorText"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/gamesRecyclerView"
+        app:layout_constraintTop_toBottomOf="@+id/recommendProgressBar"
+        android:visibility="gone"/>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
